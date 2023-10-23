@@ -29,12 +29,14 @@ const Home = () => {
     {
       img: "https://www.miche.com.co/cdn/shop/files/LE522018_Ludwig_Evolution_Mint_Fab_Awithoutcymbals_HighRes_9903_1024x1024_cf067639-017f-47b2-9f54-28836b31a747_1024x682.jpg?v=1688063015",
       name: "Instrumento 1",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sint itaque aliquid at sed non? Aperiam magni repudiandae recusandae consequatur quasi eligendi maxime minima, odit aliquid omnis, nulla, beatae esse?"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sint itaque aliquid at sed non? Aperiam magni repudiandae recusandae consequatur quasi eligendi maxime minima, odit aliquid omnis, nulla, beatae esse?",
     },
     {
       img: "https://usa.yamaha.com/files/02_FG9-R_4f2c43714dd416cf58934ba204689a0f.jpg?impolicy=resize&imwid=396&imhei=396",
       name: "Instrumento 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sint itaque aliquid at sed non? Aperiam magni repudiandae recusandae consequatur quasi eligendi maxime minima, odit aliquid omnis, nulla, beatae esse?"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sint itaque aliquid at sed non? Aperiam magni repudiandae recusandae consequatur quasi eligendi maxime minima, odit aliquid omnis, nulla, beatae esse?",
     },
   ];
 
@@ -43,38 +45,48 @@ const Home = () => {
       <div className="flex flex-col bg-primary w-full py-5 justify-center items-center">
         <h2 className="font-bold mb-3">Busca en nuestro catálogo</h2>
         <div>
-          <input className="mx-2 rounded-md p-2 w-60" placeholder="Ingresa un instrumento" type="text" />
+          <input
+            className="mx-2 rounded-md p-2 w-60"
+            placeholder="Ingresa un instrumento"
+            type="text"
+          />
           <button className="hover:bg-green-300 hover:scale-105 cursor-pointer bg-darkBlue text-[white] py-2 px-4 rounded-md">
             Buscar
           </button>
         </div>
       </div>
 
-      <div className="py-4">
+      <div className="py-4 w-[80%] items-center">
         <h2 className="font-bold mb-3 text-secondary">Categorías</h2>
-        <div className="grid gap-2 grid-cols-4">
-          {categoryInfo.map((item, index) => (
-            <SimpleCard
-              key={index}
-              img={item.img}
-              title={item.category}
-              subtitle={item.products}
-            />
-          ))}
+        <div className=" flex items-center justify-center">
+          <div className="grid gap-2 xl:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-7">
+            {categoryInfo.map((item, index) => (
+              <SimpleCard
+                key={index}
+                img={item.img}
+                title={item.category}
+                subtitle={item.products}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="py-4">
-        <h2 className="font-bold mb-3 text-secondary">Recomendaciones de producto</h2>
-        <div className="grid gap-3 grid-cols-2">
-          {recommendedInfo.map((item, index) => (
-            <DetailCard
-              key={index}
-              img={item.img}
-              title={item.name}
-              subtitle={item.description}
-            />
-          ))}
+      <div className="py-4 w-[80%]">
+        <h2 className="font-bold mb-3 text-secondary">
+          Recomendaciones de producto
+        </h2>
+        <div className=" flex items-center justify-center">
+          <div className="grid gap-3 grid-cols-1 xl:grid-cols-2 sm:grid-cols-1 md:gap-7 ">
+            {recommendedInfo.map((item, index) => (
+              <DetailCard
+                key={index}
+                img={item.img}
+                title={item.name}
+                subtitle={item.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </main>
